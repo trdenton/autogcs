@@ -1,6 +1,6 @@
 to use:
 - add it as a user script to tampermonkey
 - navigate to gcsurplus for sale items, select region (e.g. ontario) and criteria and click 'search'
-- this script will click through all the results while logging results
+- this script will click through all the results while logging items
 - once there are no more results it will display all the results on one big page
 - note: currently this is filtering for Toronto / North York, edit the script to change
