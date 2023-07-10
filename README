@@ -2,5 +2,9 @@ to use:
 - add userscript.js as a tampermonkey user script
 - navigate to gcsurplus for sale items, select region (e.g. ontario)/other criteria and click 'search'
 - this script will click through all the results while logging items that match Toronto / North York
-- once there are no more results it will display all the results on one big page
+- once there are no more 'next' pages it will display all logged results on one big page
 - note: currently this is filtering for Toronto / North York, edit the script to change to your preference
+
+
+
+The script uses persistent storage to keep results between page reloads.  There is a timer to clean up the cache after 1 minute of displaying the final results.  If you run the whole routine again within a minute of getting the final display, you will get duplicates of everything
