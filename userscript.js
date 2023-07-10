@@ -22,9 +22,8 @@
         if (btns.length > 0) {
             btns[0].click();
         }
-        //this is the "next page" timer
-        //page should reload before this triggers
-        //when the next button is not clickable, we dont go anywhere, just display
+        //this is the "display all results" timer
+        //page should reload before this triggers which nullifies the timer
         setTimeout(displayAll,5000);
     }
         
