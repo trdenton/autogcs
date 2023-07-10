@@ -1,5 +1,5 @@
 to use:
-- add it as a user script to tampermonkey
+- add userscript.js as a tampermonkey user script
 - navigate to gcsurplus for sale items, select region (e.g. ontario) and criteria and click 'search'
 - this script will click through all the results while logging items
 - once there are no more results it will display all the results on one big page
