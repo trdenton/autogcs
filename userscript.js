@@ -12,9 +12,6 @@
 // ==/UserScript==
 
 
-// disarm the script
-//
-
 (
     function() {
     'use strict';
@@ -25,22 +22,33 @@
         if (btns.length > 0) {
             btns[0].click();
         }
+        //this is the "next page" timer
         //page should reload before this triggers
         //when the next button is not clickable, we dont go anywhere, just display
         setTimeout(displayAll,5000);
     }
+        
     function set_json(key,val) {
         GM_setValue(key,JSON.stringify(val));
     }
+        
     function get_json(key) {
         if (GM_getValue(key))
             return JSON.parse(GM_getValue(key));
         else
             return [];
     }
+
+    /*
+    clear out today's data so we dont inflate the users cache
+    */
     function clearData() {
         set_json(dkey,[]);
     }
+
+    /*
+    display items at the end of the next-page routine
+    */
     function displayAll() {
         console.log("DISPLAY ALL");
         var newhtml = "";
@@ -57,6 +65,10 @@
         setTimeout(clearData,60000);
     }
 
+    /*
+    log all items to persistant storage
+    navigate to successive 'next' pages
+    */
     function letsgo() {
         var currentPageEntries = [];
         $("tbody tr").each(function() {
@@ -75,7 +87,6 @@
         });
     }
 
-    //letsgo();
     // only run if theres a next button e.g. there are results on the page
     if ( $(".next a").length > 0 ) {
         letsgo();
